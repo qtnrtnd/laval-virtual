@@ -16,6 +16,7 @@ public class StartZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            _gameManager.logger.Log("Entered Start zone");
             _gameManager.EnterStartZone();
         }
     }

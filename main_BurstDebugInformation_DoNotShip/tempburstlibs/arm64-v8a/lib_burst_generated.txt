@@ -27,6 +27,7 @@ Library: /Users/lolo/Documents/Code/laval-virtual/Temp/BurstOutput/tempburstlibs
 --assembly-defines=Unity.TextMeshPro;
 --assembly-defines=Unity.XR.CoreUtils;
 --assembly-defines=Unity.XR.Interaction.Toolkit;
+--assembly-defines=Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator;
 --assembly-defines=Unity.XR.Interaction.Toolkit.Samples.StarterAssets;
 --assembly-defines=Unity.XR.Management;
 --assembly-defines=Unity.XR.OpenXR;
@@ -72,6 +73,7 @@ Library: /Users/lolo/Documents/Code/laval-virtual/Temp/BurstOutput/tempburstlibs
 --assembly-defines=Unity.TextMeshPro;
 --assembly-defines=Unity.XR.CoreUtils;
 --assembly-defines=Unity.XR.Interaction.Toolkit;
+--assembly-defines=Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator;
 --assembly-defines=Unity.XR.Interaction.Toolkit.Samples.StarterAssets;
 --assembly-defines=Unity.XR.Management;
 --assembly-defines=Unity.XR.OpenXR;
