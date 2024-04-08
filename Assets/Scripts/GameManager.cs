@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public GameObject xrRoot;
     public Canvas debugCanvas;
     public GameObject startZone;
+    public AudioSource audioSource;
+    public AudioClip fireAlarmSound;
 
     public static GameManager Instance; // A static reference to the GameManager instance
 
@@ -59,13 +61,14 @@ public class GameManager : MonoBehaviour
         logger.Log("Scene switched to LA_FireZone");
     }
     
-    public void OnOpenedEyes()
+    public void OnOpenedEyes() {}
+
+    public void OnButtonClick()
     {
-        // SceneManager.LoadScene("LA_FireZone");
-        // _logger.Log("Scene switched to LA_FireZone");
-        // _logger.Log("Closed eyes event");
+        audioSource.clip = fireAlarmSound;
+        audioSource.Play();
     }
-    
+
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         
