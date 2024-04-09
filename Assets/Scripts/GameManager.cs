@@ -71,13 +71,10 @@ public class GameManager : MonoBehaviour
 
     public void OnButtonClick()
     {
-        if (SceneManager.GetActiveScene().name == "LA_FireZone")
-        {
             audioSource.clip = fireAlarmSound;
             audioSource.volume = 0.5f;
             audioSource.Play();
             //endFlag = true;
-        }
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
