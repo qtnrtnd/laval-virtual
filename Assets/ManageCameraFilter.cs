@@ -9,56 +9,75 @@ public class ManageCameraFilter : MonoBehaviour
 {
     public Volume zone1Volume;
     public Volume zone2Volume;
-    public float speed = 0.1f;
+    public Volume zone3Volume;
 
-    private Coroutine transitionCoroutine;
-    private Coroutine testCoroutine;
+    public float speed = 1f;
+
 
     private Boolean flag1 = false;
     private Boolean flag2 = false;
+    private Boolean flag3 = false;
 
     private float timer1 = 0f;
     private float timer2 = 0f;
+    private float timer3 = 0f;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("MainCamera"))
         {
             if (gameObject.CompareTag("Zone1"))
             {
                 flag1 = true;
             }
         }
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("MainCamera"))
         {
             if (gameObject.CompareTag("Zone2"))
             {
                 flag2 = true;
             }
         }
+        if (other.CompareTag("MainCamera"))
+        {
+            if (gameObject.CompareTag("Zone3"))
+            {
+                flag3 = true;
+            }
+        }
+        Debug.Log(flag2);
+        Debug.Log(flag1);
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("MainCamera"))
         {
             if (gameObject.CompareTag("Zone1"))
             {
                 flag1 = false;
             }
         }
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("MainCamera"))
         {
             if (gameObject.CompareTag("Zone2"))
             {
                 flag2 = false;
             }
         }
+        if (other.CompareTag("MainCamera"))
+        {
+            if (gameObject.CompareTag("Zone3"))
+            {
+                flag3 = false;
+            }
+        }
     }
     void Update()
     {
+
         if (flag1)
         {
-            if (timer1<1f)
+            if (timer1< speed)
             {
                 timer1 += Time.deltaTime;
                 zone1Volume.weight = Mathf.Lerp(0, 1, timer1);
@@ -74,7 +93,7 @@ public class ManageCameraFilter : MonoBehaviour
         }
         if (flag2)
         {
-            if (timer2 < 1f)
+            if (timer2 < speed)
             {
                 timer2 += Time.deltaTime;
                 zone2Volume.weight = Mathf.Lerp(0, 1, timer2);
@@ -86,6 +105,22 @@ public class ManageCameraFilter : MonoBehaviour
             {
                 timer2 -= Time.deltaTime;
                 zone2Volume.weight = Mathf.Lerp(0, 1, timer2);
+            }
+        }
+        if (flag3)
+        {
+            if (timer3 < speed)
+            {
+                timer3 += Time.deltaTime;
+                zone3Volume.weight = Mathf.Lerp(0, 1, timer3);
+            }
+        }
+        else
+        {
+            if (timer3 > 0)
+            {
+                timer3 -= Time.deltaTime;
+                zone3Volume.weight = Mathf.Lerp(0, 1, timer3);
             }
         }
     }
