@@ -9,14 +9,19 @@ public class GameManager : MonoBehaviour
     public GameObject initialVolume;
     public Animator EyeLidsAnimator;
     public GameObject xrRoot;
+    private GameObject player;
     public GameObject startZone;
     public AudioSource audioSource;
+    public AudioSource sourcePas;
     public AudioClip fireAlarmSound;
     public AudioClip hearthSound;
     public AudioClip PompierSound;
+    public AudioClip pasSound;
     private Volume endScreen;
     private Boolean endFlag = false;
     private float timerEnd = 0f;
+    
+    private Vector3 OldPosition;
 
     public static GameManager Instance; // A static reference to the GameManager instance
 
@@ -43,6 +48,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(xrRoot);
+        player = GameObject.FindWithTag("Player");
     }
 
     public void EnterStartZone()
@@ -88,6 +94,18 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
+        
+        if (player.transform.position != OldPosition)
+        {
+            OldPosition = player.transform.position;
+        }
+        else
+        {
+            sourcePas.clip = pasSound;
+            sourcePas.Play();
+            OldPosition = player.transform.position;
+        }
+        
         if (endFlag)
         {
             if (timerEnd < 1f)
