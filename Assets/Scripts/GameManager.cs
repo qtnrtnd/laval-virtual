@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void OnClosedEyes()
-    {
+    { 
         logger.Log("Closed eyes event");
         Invoke(nameof(ToFireScene), 2f);
     }
