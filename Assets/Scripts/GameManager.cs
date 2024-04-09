@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -11,6 +13,9 @@ public class GameManager : MonoBehaviour
     public GameObject startZone;
     public AudioSource audioSource;
     public AudioClip fireAlarmSound;
+    private Volume endScreen;
+    private Boolean endFlag = false;
+    private float timerEnd = 0f;
 
     public static GameManager Instance; // A static reference to the GameManager instance
 
@@ -67,6 +72,8 @@ public class GameManager : MonoBehaviour
     {
         audioSource.clip = fireAlarmSound;
         audioSource.Play();
+        //endFlag = true;
+
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -75,6 +82,20 @@ public class GameManager : MonoBehaviour
         if (scene.name == "LA_FireZone")
         {
             Destroy(startZone);
+            endScreen = GameObject.Find("EndVolume").GetComponent<Volume>();
+
+        }
+    }
+
+    public void Update()
+    {
+        if (endFlag)
+        {
+            if (timerEnd < 1f)
+            {
+                timerEnd += Time.deltaTime;
+                endScreen.weight = Mathf.Lerp(0, 1, timerEnd);
+            }
         }
     }
 }

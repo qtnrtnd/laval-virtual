@@ -7,6 +7,7 @@ TagManager:
   - Zone1
   - Zone2
   - Zone3
+  - EndScreen
   layers:
   - Default
   - TransparentFX
