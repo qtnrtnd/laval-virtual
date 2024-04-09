@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_VFX_Glow_01
   m_Shader: {fileID: 4800000, guid: b8a99704b1204314e816971e63a2a521, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 0
@@ -20,6 +22,7 @@ Material:
   disabledShaderPasses:
   - DistortionVectors
   - TransparentBackface
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -155,7 +158,7 @@ Material:
     - _TransparentSortPriority: 0
     - _TransparentZWrite: 0
     - _UseShadowThreshold: 0
-    - _WindSpeed: 1
+    - _WindSpeed: 0
     - _ZTest1: 2
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4

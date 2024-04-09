@@ -8,7 +8,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_VFX_Fire_01
-  m_Shader: {fileID: 4800000, guid: b8a99704b1204314e816971e63a2a521, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2ce4c95e7106985488f7f5bb730b3ae5, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 0
@@ -20,9 +22,22 @@ Material:
   disabledShaderPasses:
   - DistortionVectors
   - TransparentBackface
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _ColorGradientMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DistortionMaskTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask:
+        m_Texture: {fileID: 2800000, guid: 1c39f37a030014c4abc1e00881d7f68f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MaskMoveTexture:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -37,6 +52,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Mask_Texture:
         m_Texture: {fileID: 2800000, guid: 1c39f37a030014c4abc1e00881d7f68f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise:
+        m_Texture: {fileID: 2800000, guid: f1b6b10620016be45b38159cac55e09b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseDistortionTexture:
@@ -57,6 +76,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Texture:
         m_Texture: {fileID: 2800000, guid: e98f402880ccea64fbeab50c8ad0b82a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample2:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -91,9 +114,11 @@ Material:
     - _DepthFade: 1
     - _Dissolve: 0
     - _Distortion: 1.5
+    - _DistortionAmount: 1
     - _DistortionEnable: 0
     - _DistortionIntensity: 0
     - _DistortionMask: 0
+    - _DistortionMaskIntensity: 1
     - _DistortionOnly: 0
     - _DoubleSidedEnable: 0
     - _DoubleSidedNormalMode: 2
@@ -101,6 +126,7 @@ Material:
     - _DstBlend: 1
     - _EmissionIntensity: 33
     - _Emissive: 40
+    - _EmissiveIntensity: 1
     - _Emissive_Amount: 10
     - _EnableFogOnTransparent: 1
     - _Global_Speed: 1
@@ -115,7 +141,10 @@ Material:
     - _Mask_Multiply: 1
     - _Mask_Power: 1
     - _Mask_Speed: 0
+    - _NoiseMultiply: 1
+    - _NoisePower: 1
     - _NoisesMultiply: 1
+    - _NoisesOpacityBoost: 1
     - _NoisesPower: 1
     - _Noises_Multiply: 1
     - _Noises_Power: 1
@@ -154,7 +183,7 @@ Material:
     - _TransparentSortPriority: 0
     - _TransparentZWrite: 0
     - _UseShadowThreshold: 0
-    - _WindSpeed: 1
+    - _WindSpeed: 0
     - _ZTest1: 2
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
@@ -163,7 +192,9 @@ Material:
     - _ZWrite1: 0
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Color: {r: 0.9245283, g: 0.56546456, b: 0.17007834, a: 0}
+    - _ColorBottom: {r: 1, g: 0.36666667, b: 0, a: 0}
+    - _ColorTop: {r: 1, g: 0.6666667, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _MaskMoveScale: {r: 1, g: 1, b: 0, a: 0}
