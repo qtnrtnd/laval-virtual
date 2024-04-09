@@ -7,12 +7,16 @@ public class GameManager : MonoBehaviour
 {
     [HideInInspector]
     public Logger logger;
+
+    public GameObject initialVolume;
     public Animator EyeLidsAnimator;
     public GameObject xrRoot;
     public Canvas debugCanvas;
     public GameObject startZone;
     public AudioSource audioSource;
     public AudioClip fireAlarmSound;
+    public AudioClip hearthSound;
+    public AudioClip hearthLoop;
     private Volume endScreen;
     private Boolean endFlag = false;
     private float timerEnd = 0f;
@@ -70,18 +74,22 @@ public class GameManager : MonoBehaviour
 
     public void OnButtonClick()
     {
-        audioSource.clip = fireAlarmSound;
-        audioSource.Play();
-        //endFlag = true;
-
+        if (SceneManager.GetActiveScene().name == "LA_FireZone")
+        {
+            audioSource.clip = fireAlarmSound;
+            audioSource.volume = 0.5f;
+            audioSource.Play();
+            //endFlag = true;
+        }
     }
 
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         
         if (scene.name == "LA_FireZone")
         {
             Destroy(startZone);
+            Destroy(initialVolume);
             endScreen = GameObject.Find("EndVolume").GetComponent<Volume>();
 
         }
