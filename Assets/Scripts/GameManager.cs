@@ -5,21 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [HideInInspector]
-    public Logger logger;
 
     public GameObject initialVolume;
     public Animator EyeLidsAnimator;
     public GameObject xrRoot;
-    public Canvas debugCanvas;
+    private GameObject player;
     public GameObject startZone;
     public AudioSource audioSource;
+    public AudioSource sourcePas;
     public AudioClip fireAlarmSound;
     public AudioClip hearthSound;
     public AudioClip PompierSound;
+    public AudioClip pasSound;
     private Volume endScreen;
     private Boolean endFlag = false;
     private float timerEnd = 0f;
+    
+    private Vector3 OldPosition;
 
     public static GameManager Instance; // A static reference to the GameManager instance
 
@@ -46,20 +48,16 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(xrRoot);
-        DontDestroyOnLoad(debugCanvas);
-        logger = new Logger(GameObject.Find("Debug").GetComponent<TMPro.TextMeshProUGUI>());
-        logger.Log("GameManager started");
+        player = GameObject.FindWithTag("Player");
     }
 
     public void EnterStartZone()
     {
-        logger.Log("Player entered start zone");
         EyeLidsAnimator.SetBool("EyesOpened", false);
     }
 
     public void OnClosedEyes()
     { 
-        logger.Log("Closed eyes event");
         Invoke(nameof(ToFireScene), 2f);
     }
 
@@ -67,20 +65,16 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("LA_FireZone", LoadSceneMode.Additive);
         EyeLidsAnimator.SetBool("EyesOpened", true);
-        logger.Log("Scene switched to LA_FireZone");
     }
     
     public void OnOpenedEyes() {}
 
     public void OnButtonClick()
     {
-        if (SceneManager.GetActiveScene().name == "LA_FireZone")
-        {
             audioSource.clip = fireAlarmSound;
             audioSource.volume = 0.5f;
             audioSource.Play();
             //endFlag = true;
-        }
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -97,6 +91,18 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
+        
+        if (player.transform.position != OldPosition)
+        {
+            OldPosition = player.transform.position;
+        }
+        else
+        {
+            sourcePas.clip = pasSound;
+            sourcePas.Play();
+            OldPosition = player.transform.position;
+        }
+        
         if (endFlag)
         {
             if (timerEnd < 1f)
