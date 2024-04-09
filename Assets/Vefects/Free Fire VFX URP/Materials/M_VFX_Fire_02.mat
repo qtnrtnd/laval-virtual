@@ -199,7 +199,7 @@ Material:
     m_Colors:
     - _Color: {r: 0.9056604, g: 0.49062592, b: 0.055535804, a: 0}
     - _ColorBottom: {r: 1, g: 0.36666667, b: 0, a: 0}
-    - _ColorTop: {r: 1, g: 0.6666667, b: 0, a: 0}
+    - _ColorTop: {r: 1, g: 0.8620171, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _MaskMoveScale: {r: 1, g: 1, b: 0, a: 0}
