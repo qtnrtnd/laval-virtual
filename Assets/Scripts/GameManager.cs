@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip fireAlarmSound;
     public AudioClip hearthSound;
-    public AudioClip hearthLoop;
+    public AudioClip PompierSound;
     private Volume endScreen;
     private Boolean endFlag = false;
     private float timerEnd = 0f;
