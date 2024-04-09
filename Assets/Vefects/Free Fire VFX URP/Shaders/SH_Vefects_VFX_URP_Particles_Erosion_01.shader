@@ -477,8 +477,8 @@ Shader "SH_Vefects_VFX_URP_Particles_Erosion_01"
 				float2 panner53 = ( windSpeed21 * _Noise01Speed + texCoord36);
 				float2 texCoord43 = IN.ase_texcoord3.xy * _Noise02Scale + float2( 0,0 );
 				float2 panner51 = ( windSpeed21 * _Noise02Speed + texCoord43);
-				float Noises85 = saturate( ( pow( ( tex2D( _Noise_01_Texture, ( Distortion39 + panner53 ) ).r * tex2D( _Noise_02_Texture, ( Distortion39 + panner51 ) ).r ) , _NoisesPower ) * _NoisesMultiply ) );
-				float temp_output_89_0 = ( saturate( ( saturate( ( pow( tex2D( _MaskTexture, ( ( Distortion39 * _DistortionIntensity ) + panner57 ) ).r , _MaskPower ) * _MaskMultiply ) ) * saturate( ( pow( tex2D( _MaskMoveTexture, ( texCoord58 + appendResult60 ) ).r , _MaskMovePower ) * _MaskMoveMultiply ) ) ) ) * Noises85 );
+				float Noises85 = saturate( ( pow( abs(( tex2D( _Noise_01_Texture, ( Distortion39 + panner53 ) ).r * tex2D( _Noise_02_Texture, ( Distortion39 + panner51 ) ).r )) , _NoisesPower ) * _NoisesMultiply ) );
+				float temp_output_89_0 = ( saturate( ( saturate( ( pow( abs( tex2D( _MaskTexture, ( ( Distortion39 * _DistortionIntensity ) + panner57 ) ).r) , _MaskPower ) * _MaskMultiply ) ) * saturate( ( pow( abs( tex2D( _MaskMoveTexture, ( texCoord58 + appendResult60 ) ).r) , _MaskMovePower ) * _MaskMoveMultiply ) ) ) ) * Noises85 );
 				
 				float temp_output_97_0 = ( saturate( ( temp_output_89_0 * _OpacityBoost ) ) - ( IN.ase_texcoord4.x + _Dissolve ) );
 				
@@ -805,8 +805,8 @@ Shader "SH_Vefects_VFX_URP_Particles_Erosion_01"
 				float2 panner53 = ( windSpeed21 * _Noise01Speed + texCoord36);
 				float2 texCoord43 = IN.ase_texcoord2.xy * _Noise02Scale + float2( 0,0 );
 				float2 panner51 = ( windSpeed21 * _Noise02Speed + texCoord43);
-				float Noises85 = saturate( ( pow( ( tex2D( _Noise_01_Texture, ( Distortion39 + panner53 ) ).r * tex2D( _Noise_02_Texture, ( Distortion39 + panner51 ) ).r ) , _NoisesPower ) * _NoisesMultiply ) );
-				float temp_output_89_0 = ( saturate( ( saturate( ( pow( tex2D( _MaskTexture, ( ( Distortion39 * _DistortionIntensity ) + panner57 ) ).r , _MaskPower ) * _MaskMultiply ) ) * saturate( ( pow( tex2D( _MaskMoveTexture, ( texCoord58 + appendResult60 ) ).r , _MaskMovePower ) * _MaskMoveMultiply ) ) ) ) * Noises85 );
+				float Noises85 = saturate( ( pow( abs( tex2D( _Noise_01_Texture, ( Distortion39 + panner53 ) ).r * tex2D( _Noise_02_Texture, ( Distortion39 + panner51 ) ).r) , _NoisesPower ) * _NoisesMultiply ) );
+				float temp_output_89_0 = ( saturate( ( saturate( ( pow( abs( tex2D( _MaskTexture, ( ( Distortion39 * _DistortionIntensity ) + panner57 ) ).r ) , _MaskPower ) * _MaskMultiply ) ) * saturate( ( pow( abs ( tex2D( _MaskMoveTexture, ( texCoord58 + appendResult60 ) ).r) , _MaskMovePower ) * _MaskMoveMultiply ) ) ) ) * Noises85 );
 				float temp_output_97_0 = ( saturate( ( temp_output_89_0 * _OpacityBoost ) ) - ( IN.ase_texcoord3.x + _Dissolve ) );
 				
 
@@ -1096,8 +1096,8 @@ Shader "SH_Vefects_VFX_URP_Particles_Erosion_01"
 				float2 panner53 = ( windSpeed21 * _Noise01Speed + texCoord36);
 				float2 texCoord43 = IN.ase_texcoord2.xy * _Noise02Scale + float2( 0,0 );
 				float2 panner51 = ( windSpeed21 * _Noise02Speed + texCoord43);
-				float Noises85 = saturate( ( pow( ( tex2D( _Noise_01_Texture, ( Distortion39 + panner53 ) ).r * tex2D( _Noise_02_Texture, ( Distortion39 + panner51 ) ).r ) , _NoisesPower ) * _NoisesMultiply ) );
-				float temp_output_89_0 = ( saturate( ( saturate( ( pow( tex2D( _MaskTexture, ( ( Distortion39 * _DistortionIntensity ) + panner57 ) ).r , _MaskPower ) * _MaskMultiply ) ) * saturate( ( pow( tex2D( _MaskMoveTexture, ( texCoord58 + appendResult60 ) ).r , _MaskMovePower ) * _MaskMoveMultiply ) ) ) ) * Noises85 );
+				float Noises85 = saturate( ( pow(abs( ( tex2D( _Noise_01_Texture, ( Distortion39 + panner53 ) ).r * tex2D( _Noise_02_Texture, ( Distortion39 + panner51 ) ).r ) ) , _NoisesPower ) * _NoisesMultiply ) );
+				float temp_output_89_0 = ( saturate( ( saturate( ( pow(abs( tex2D( _MaskTexture, ( ( Distortion39 * _DistortionIntensity ) + panner57 ) ).r ) , _MaskPower ) * _MaskMultiply ) ) * saturate( ( pow( abs( tex2D( _MaskMoveTexture, ( texCoord58 + appendResult60 ) ).r) , _MaskMovePower ) * _MaskMoveMultiply ) ) ) ) * Noises85 );
 				float temp_output_97_0 = ( saturate( ( temp_output_89_0 * _OpacityBoost ) ) - ( IN.ase_texcoord3.x + _Dissolve ) );
 				
 
@@ -1366,8 +1366,8 @@ Shader "SH_Vefects_VFX_URP_Particles_Erosion_01"
 				float2 panner53 = ( windSpeed21 * _Noise01Speed + texCoord36);
 				float2 texCoord43 = IN.ase_texcoord.xy * _Noise02Scale + float2( 0,0 );
 				float2 panner51 = ( windSpeed21 * _Noise02Speed + texCoord43);
-				float Noises85 = saturate( ( pow( ( tex2D( _Noise_01_Texture, ( Distortion39 + panner53 ) ).r * tex2D( _Noise_02_Texture, ( Distortion39 + panner51 ) ).r ) , _NoisesPower ) * _NoisesMultiply ) );
-				float temp_output_89_0 = ( saturate( ( saturate( ( pow( tex2D( _MaskTexture, ( ( Distortion39 * _DistortionIntensity ) + panner57 ) ).r , _MaskPower ) * _MaskMultiply ) ) * saturate( ( pow( tex2D( _MaskMoveTexture, ( texCoord58 + appendResult60 ) ).r , _MaskMovePower ) * _MaskMoveMultiply ) ) ) ) * Noises85 );
+				float Noises85 = saturate( ( pow( abs( ( tex2D( _Noise_01_Texture, ( Distortion39 + panner53 ) ).r * tex2D( _Noise_02_Texture, ( Distortion39 + panner51 ) ).r ) ) , _NoisesPower ) * _NoisesMultiply ) );
+				float temp_output_89_0 = ( saturate( ( saturate( ( pow( abs( tex2D( _MaskTexture, ( ( Distortion39 * _DistortionIntensity ) + panner57 ) ).r ) , _MaskPower ) * _MaskMultiply ) ) * saturate( ( pow( abs ( tex2D( _MaskMoveTexture, ( texCoord58 + appendResult60 ) ).r ) , _MaskMovePower ) * _MaskMoveMultiply ) ) ) ) * Noises85 );
 				float temp_output_97_0 = ( saturate( ( temp_output_89_0 * _OpacityBoost ) ) - ( IN.ase_texcoord1.x + _Dissolve ) );
 				
 
@@ -1631,8 +1631,8 @@ Shader "SH_Vefects_VFX_URP_Particles_Erosion_01"
 				float2 panner53 = ( windSpeed21 * _Noise01Speed + texCoord36);
 				float2 texCoord43 = IN.ase_texcoord.xy * _Noise02Scale + float2( 0,0 );
 				float2 panner51 = ( windSpeed21 * _Noise02Speed + texCoord43);
-				float Noises85 = saturate( ( pow( ( tex2D( _Noise_01_Texture, ( Distortion39 + panner53 ) ).r * tex2D( _Noise_02_Texture, ( Distortion39 + panner51 ) ).r ) , _NoisesPower ) * _NoisesMultiply ) );
-				float temp_output_89_0 = ( saturate( ( saturate( ( pow( tex2D( _MaskTexture, ( ( Distortion39 * _DistortionIntensity ) + panner57 ) ).r , _MaskPower ) * _MaskMultiply ) ) * saturate( ( pow( tex2D( _MaskMoveTexture, ( texCoord58 + appendResult60 ) ).r , _MaskMovePower ) * _MaskMoveMultiply ) ) ) ) * Noises85 );
+				float Noises85 = saturate( ( pow( abs( ( tex2D( _Noise_01_Texture, ( Distortion39 + panner53 ) ).r * tex2D( _Noise_02_Texture, ( Distortion39 + panner51 ) ).r ) ) , _NoisesPower ) * _NoisesMultiply ) );
+				float temp_output_89_0 = ( saturate( ( saturate( ( pow( abs( tex2D( _MaskTexture, ( ( Distortion39 * _DistortionIntensity ) + panner57 ) ).r ) , _MaskPower ) * _MaskMultiply ) ) * saturate( ( pow( abs( tex2D( _MaskMoveTexture, ( texCoord58 + appendResult60 ) ).r ) , _MaskMovePower ) * _MaskMoveMultiply ) ) ) ) * Noises85 );
 				float temp_output_97_0 = ( saturate( ( temp_output_89_0 * _OpacityBoost ) ) - ( IN.ase_texcoord1.x + _Dissolve ) );
 				
 
@@ -1910,8 +1910,8 @@ Shader "SH_Vefects_VFX_URP_Particles_Erosion_01"
 				float2 panner53 = ( windSpeed21 * _Noise01Speed + texCoord36);
 				float2 texCoord43 = IN.ase_texcoord1.xy * _Noise02Scale + float2( 0,0 );
 				float2 panner51 = ( windSpeed21 * _Noise02Speed + texCoord43);
-				float Noises85 = saturate( ( pow( ( tex2D( _Noise_01_Texture, ( Distortion39 + panner53 ) ).r * tex2D( _Noise_02_Texture, ( Distortion39 + panner51 ) ).r ) , _NoisesPower ) * _NoisesMultiply ) );
-				float temp_output_89_0 = ( saturate( ( saturate( ( pow( tex2D( _MaskTexture, ( ( Distortion39 * _DistortionIntensity ) + panner57 ) ).r , _MaskPower ) * _MaskMultiply ) ) * saturate( ( pow( tex2D( _MaskMoveTexture, ( texCoord58 + appendResult60 ) ).r , _MaskMovePower ) * _MaskMoveMultiply ) ) ) ) * Noises85 );
+				float Noises85 = saturate( ( pow( abs ( ( tex2D( _Noise_01_Texture, ( Distortion39 + panner53 ) ).r * tex2D( _Noise_02_Texture, ( Distortion39 + panner51 ) ).r )) , _NoisesPower ) * _NoisesMultiply ) );
+				float temp_output_89_0 = ( saturate( ( saturate( ( pow( abs ( tex2D( _MaskTexture, ( ( Distortion39 * _DistortionIntensity ) + panner57 ) ).r) , _MaskPower ) * _MaskMultiply ) ) * saturate( ( pow( abs ( tex2D( _MaskMoveTexture, ( texCoord58 + appendResult60 ) ).r) , _MaskMovePower ) * _MaskMoveMultiply ) ) ) ) * Noises85 );
 				float temp_output_97_0 = ( saturate( ( temp_output_89_0 * _OpacityBoost ) ) - ( IN.ase_texcoord2.x + _Dissolve ) );
 				
 
@@ -2189,8 +2189,8 @@ Shader "SH_Vefects_VFX_URP_Particles_Erosion_01"
 				float2 panner53 = ( windSpeed21 * _Noise01Speed + texCoord36);
 				float2 texCoord43 = IN.ase_texcoord1.xy * _Noise02Scale + float2( 0,0 );
 				float2 panner51 = ( windSpeed21 * _Noise02Speed + texCoord43);
-				float Noises85 = saturate( ( pow( ( tex2D( _Noise_01_Texture, ( Distortion39 + panner53 ) ).r * tex2D( _Noise_02_Texture, ( Distortion39 + panner51 ) ).r ) , _NoisesPower ) * _NoisesMultiply ) );
-				float temp_output_89_0 = ( saturate( ( saturate( ( pow( tex2D( _MaskTexture, ( ( Distortion39 * _DistortionIntensity ) + panner57 ) ).r , _MaskPower ) * _MaskMultiply ) ) * saturate( ( pow( tex2D( _MaskMoveTexture, ( texCoord58 + appendResult60 ) ).r , _MaskMovePower ) * _MaskMoveMultiply ) ) ) ) * Noises85 );
+				float Noises85 = saturate( ( pow( abs( ( tex2D( _Noise_01_Texture, ( Distortion39 + panner53 ) ).r * tex2D( _Noise_02_Texture, ( Distortion39 + panner51 ) ).r ) ) , _NoisesPower ) * _NoisesMultiply ) );
+				float temp_output_89_0 = ( saturate( ( saturate( ( pow( abs( tex2D( _MaskTexture, ( ( Distortion39 * _DistortionIntensity ) + panner57 ) ).r ) , _MaskPower ) * _MaskMultiply ) ) * saturate( ( pow( abs( tex2D( _MaskMoveTexture, ( texCoord58 + appendResult60 ) ).r ) , _MaskMovePower ) * _MaskMoveMultiply ) ) ) ) * Noises85 );
 				float temp_output_97_0 = ( saturate( ( temp_output_89_0 * _OpacityBoost ) ) - ( IN.ase_texcoord2.x + _Dissolve ) );
 				
 
