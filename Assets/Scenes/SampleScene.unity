@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2120,6 +2120,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 174.018
       objectReference: {fileID: 0}
+    - target: {fileID: 503466759152203280, guid: cd94895e379ba114aa3ac58803e43c3b,
+        type: 3}
+      propertyPath: m_Name
+      value: laval-virtuel_v3
+      objectReference: {fileID: 0}
     - target: {fileID: 1532812198847229145, guid: cd94895e379ba114aa3ac58803e43c3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2445,6 +2450,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 5.71
       objectReference: {fileID: 0}
+    - target: {fileID: 4691553720737404893, guid: cd94895e379ba114aa3ac58803e43c3b,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734067812229503996, guid: cd94895e379ba114aa3ac58803e43c3b,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5453491015782129529, guid: cd94895e379ba114aa3ac58803e43c3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2495,6 +2510,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5793533226871232332, guid: cd94895e379ba114aa3ac58803e43c3b,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5793533226871232332, guid: cd94895e379ba114aa3ac58803e43c3b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a6a5b5f30803fc140973df18b18f75cb, type: 2}
     - target: {fileID: 6069842418018722057, guid: cd94895e379ba114aa3ac58803e43c3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2540,10 +2565,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 13.184
       objectReference: {fileID: 0}
+    - target: {fileID: 7151565519459460420, guid: cd94895e379ba114aa3ac58803e43c3b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: da14592404366fa48806fc5c8d30e1fe, type: 2}
     - target: {fileID: 7591100294695003918, guid: cd94895e379ba114aa3ac58803e43c3b,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 7.275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8607023574510294219, guid: cd94895e379ba114aa3ac58803e43c3b,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8607023574510294219, guid: cd94895e379ba114aa3ac58803e43c3b,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9021146720651132419, guid: cd94895e379ba114aa3ac58803e43c3b,
         type: 3}

@@ -3,7 +3,27 @@ guid: 6c7c0838838bd81488c51cc64ba735fe
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass_material
+    second: {fileID: 2100000, guid: d16660b8b773b114aa6e3a4f7b5d3a17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "baie_vitr\xE9e"
+    second: {fileID: 2100000, guid: d16660b8b773b114aa6e3a4f7b5d3a17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_moquette
+    second: {fileID: 2100000, guid: 4e5889e812811e34196c6bcfeb67b26b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_vinyle
+    second: {fileID: 2100000, guid: 39943e66d4fba21478fe7134a0faf61d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
