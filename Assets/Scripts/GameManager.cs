@@ -5,13 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [HideInInspector]
-    public Logger logger;
 
     public GameObject initialVolume;
     public Animator EyeLidsAnimator;
     public GameObject xrRoot;
-    public Canvas debugCanvas;
     public GameObject startZone;
     public AudioSource audioSource;
     public AudioClip fireAlarmSound;
@@ -46,20 +43,15 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(xrRoot);
-        DontDestroyOnLoad(debugCanvas);
-        logger = new Logger(GameObject.Find("Debug").GetComponent<TMPro.TextMeshProUGUI>());
-        logger.Log("GameManager started");
     }
 
     public void EnterStartZone()
     {
-        logger.Log("Player entered start zone");
         EyeLidsAnimator.SetBool("EyesOpened", false);
     }
 
     public void OnClosedEyes()
     { 
-        logger.Log("Closed eyes event");
         Invoke(nameof(ToFireScene), 2f);
     }
 
@@ -67,7 +59,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("LA_FireZone", LoadSceneMode.Additive);
         EyeLidsAnimator.SetBool("EyesOpened", true);
-        logger.Log("Scene switched to LA_FireZone");
     }
     
     public void OnOpenedEyes() {}
